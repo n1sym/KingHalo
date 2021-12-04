@@ -15,6 +15,7 @@ jobs:
           ruby-version: '2.6' 
       - name: run ruby
         run: ruby hello.rb
+        working-directory: ${{ github.workspace }}/backend
       - name: git setting
         run: |
           git config user.name github-actions
