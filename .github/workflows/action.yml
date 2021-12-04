@@ -17,6 +17,7 @@ jobs:
           echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list
           apt-get update -q -y
           apt-get install -y google-chrome-stable
+          apt install chromium-chromedriver
       - name: bundle install
         run: |
           gem install bundler:2.1.4
