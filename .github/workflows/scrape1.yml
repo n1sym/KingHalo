@@ -1,5 +1,6 @@
 name: Scrape 1
 on: 
+  workflow_dispatch:
   schedule:
     - cron: '0 12 * * 5,6' # 金,土曜日の21時に起動
 jobs:
@@ -29,7 +30,7 @@ jobs:
           ruby scrape.rb
         working-directory: ${{ github.workspace }}/backend
       - name: copy file
-        run: cp halo.json ../frontend/my-app/utils
+        run: cp halo.json ../frontend/utils
         working-directory: ${{ github.workspace }}/backend
       - name: git setting
         run: |
@@ -59,15 +60,15 @@ jobs:
           git pull
       - name: install dependency
         run: yarn install
-        working-directory: ${{ github.workspace }}/frontend/my-app
+        working-directory: ${{ github.workspace }}/frontend
       - name: build React App
         run: |
           yarn run build
           touch out/.nojekyll
-        working-directory: ${{ github.workspace }}/frontend/my-app
+        working-directory: ${{ github.workspace }}/frontend
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3.6.4
         with:
           github_token: ${{ secrets.MY_GITHUB_TOKEN }}
-          publish_dir: ./frontend/my-app/out
+          publish_dir: ./frontend/out
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."

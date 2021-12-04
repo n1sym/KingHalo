@@ -18,15 +18,15 @@ jobs:
           git pull
       - name: install dependency
         run: yarn install
-        working-directory: ${{ github.workspace }}/frontend/my-app
+        working-directory: ${{ github.workspace }}/frontend
       - name: build React App
         run: |
           yarn run build
           touch out/.nojekyll
-        working-directory: ${{ github.workspace }}/frontend/my-app
+        working-directory: ${{ github.workspace }}/frontend
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3.6.4
         with:
           github_token: ${{ secrets.MY_GITHUB_TOKEN }}
-          publish_dir: ./frontend/my-app/out
+          publish_dir: ./frontend/out
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
