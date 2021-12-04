@@ -14,8 +14,10 @@ jobs:
           ruby-version: '2.6' 
       - name: Install chrome
         run: |
-          sudo apt update
-          sudo apt install chromium-chromedriver
+          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
+          echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' | tee /etc/apt/sources.list.d/google-chrome.list
+          apt update -y
+          apt install -y google-chrome-stable
         working-directory: ${{ github.workspace }}/backend
       - name: bundle install
         run: |
