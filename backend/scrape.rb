@@ -22,7 +22,7 @@ def main
     selenium_options,
     selenium_capabilities_chrome
   ]
-  driver = Selenium::WebDriver.for(:remote, capabilities: caps, url: "http://#{"backend_chrome_1"}:4444/wd/hub")
+  driver = Selenium::WebDriver.for(:remote, capabilities: caps, url: "http://#{"selenium"}:4444/wd/hub")
   driver.manage.timeouts.implicit_wait = 30
   driver.navigate.to "https://race.netkeiba.com/top/race_list.html"
   return puts driver.title
