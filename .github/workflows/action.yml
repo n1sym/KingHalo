@@ -7,18 +7,18 @@ jobs:
   backend:
     name: ruby
     runs-on: ubuntu-latest
+    services:
+      selenium:
+       image: selenium/standalone-chrome:3.141.59-vanadium
+       ports:
+         - 4444:4444
+       volumes:
+         - /dev/shm:/dev/shm
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: '2.6' 
-      - name: Install chrome
-        run: |
-          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
-          echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' | tee /etc/apt/sources.list.d/google-chrome.list
-          apt update -y
-          apt install -y google-chrome-stable
-        working-directory: ${{ github.workspace }}/backend
       - name: bundle install
         run: |
           gem install bundler:2.1.4
