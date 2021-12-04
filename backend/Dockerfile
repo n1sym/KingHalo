@@ -5,7 +5,6 @@ RUN apk add --no-cache -t .build-dependencies \
     alpine-sdk \
     build-base \
  && apk add bash \
- && apk add -U chromium chromium-chromedriver \
  && gem install bundler:2.0.2 \
  && bundle install \
  && apk del --purge .build-dependencies

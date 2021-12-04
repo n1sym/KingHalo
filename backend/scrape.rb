@@ -12,15 +12,20 @@ def selenium_options
   options
 end
 
+def selenium_capabilities_chrome
+  Selenium::WebDriver::Remote::Capabilities.chrome
+end
+
 def main
   puts "start scrape"
   caps = [
-    selenium_options
+    selenium_options,
+    selenium_capabilities_chrome
   ]
-  driver = Selenium::WebDriver.for(:remote, desired_capabilities: :chrome, capabilities: caps)
+  driver = Selenium::WebDriver.for(:remote, capabilities: caps, url: "http://#{"backend_chrome_1"}:4444/wd/hub")
   driver.manage.timeouts.implicit_wait = 30
   driver.navigate.to "https://race.netkeiba.com/top/race_list.html"
-  puts driver.title
+  return puts driver.title
   elements = driver.find_elements(:xpath, '//dl[@class="RaceList_DataList"]/dd/ul/li/a')
   race_url_list = []
   elements.each do |e|
