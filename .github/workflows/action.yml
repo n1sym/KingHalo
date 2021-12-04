@@ -11,12 +11,19 @@ jobs:
       image: ruby:2.7.1-alpine
     steps:
       - uses: actions/checkout@v2
-      - name: Install
+      - uses: nanasess/setup-chromedriver@master
+        with:
+          # Optional: do not specify to match Chrome's version
+          chromedriver-version: '88.0.4324.96'
+      - run: |
+          export DISPLAY=:99
+          chromedriver --url-base=/wd/hub &
+          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
+      - name: bundle install
         run: |
-          apk add --no-cache alpine-sdk build-base bash
-          apk add -U chromium chromium-chromedriver
-          gem install bundler:2.0.2
+          gem install bundler:2.1.4
           bundle install
+        working-directory: ${{ github.workspace }}/backend
       - name: run ruby
         run: ruby scrape.rb
         working-directory: ${{ github.workspace }}/backend
