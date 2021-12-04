@@ -1,6 +1,16 @@
-steps:
-- uses: actions/checkout@v2
-- uses: actions/setup-ruby@v1
-  with:
-    ruby-version: '2.6' # Version range or exact version of a Ruby version to use, using semvers version range syntax.
-- run: ruby hello.rb
+name: GitHub Actions
+on: 
+  push:
+  schedule:
+    - cron: '0 0 * * *' # Once per day at midnight
+
+jobs:
+  run:
+    name: test-ruby
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.6' # Version range or exact version of a Ruby version to use, using semvers version range syntax.
+      - run: ruby hello.rb
