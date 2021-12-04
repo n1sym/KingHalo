@@ -1,8 +1,7 @@
-name: GitHub Actions
+name: Scrape 1
 on: 
-  push:
   schedule:
-    - cron: '0 0 * * 0,6' # 土曜日,日曜日の午前0時に起動
+    - cron: '0 12 * * 5,6' # 金,土曜日の21時に起動
 jobs:
   backend:
     name: ruby

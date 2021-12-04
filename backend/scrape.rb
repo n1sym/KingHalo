@@ -22,7 +22,7 @@ def main
     selenium_options,
     selenium_capabilities_chrome
   ]
-  driver = Selenium::WebDriver.for(:remote, capabilities: caps, url: "http://#{"localhost"}:4444/wd/hub")
+  driver = Selenium::WebDriver.for(:remote, capabilities: caps, url: "http://localhost:4444/wd/hub")
   driver.manage.timeouts.implicit_wait = 30
   driver.navigate.to "https://race.netkeiba.com/top/race_list.html"
   puts driver.title
@@ -72,7 +72,7 @@ if File.exist?("halo.json")
   end
 end
 
-date = Date.today
+date = Date.today + 1
 halo_list = main()
 arr << {date: date, list: halo_list}
 
