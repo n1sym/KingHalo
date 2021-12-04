@@ -25,7 +25,7 @@ def main
     race_url_list << e.attribute("href").gsub(/[^\d]/, "").to_i
   end
   race_url_list.uniq!
-
+  puts "finished scrape race_url_list"
   agent = Mechanize.new
   horse_url_list = []
   race_url_list.each do |url|
@@ -36,7 +36,7 @@ def main
       horse_url_list << e.attribute("href").value
     end
   end
-
+  puts "finished scrape horse_url_list"
   halo_list = []
   horse_url_list.each do |url|
     sleep 1

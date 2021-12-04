@@ -18,7 +18,9 @@ jobs:
           sudo apt install chromium-chromedriver
         working-directory: ${{ github.workspace }}/backend
       - name: bundle install
-        run: bundle install
+        run: |
+          gem install bundler:2.1.4
+          bundle install
         working-directory: ${{ github.workspace }}/backend
       - name: run ruby
         run: ruby scrape.rb
