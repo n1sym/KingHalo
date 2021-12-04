@@ -7,21 +7,17 @@ jobs:
   backend:
     name: ruby
     runs-on: ubuntu-latest
+    container:
+      image: ruby:2.7.1-alpine
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-ruby@v1
-        with:
-          ruby-version: '2.6' 
-      - uses: nanasess/setup-chromedriver@master
-        with:
-          # Optional: do not specify to match Chrome's version
-          chromedriver-version: '96.0.4664.45'
-      - run: |
-          export DISPLAY=:99
-          chromedriver --url-base=/wd/hub &
-          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
+      - name: Install
+        run: |
+          apk add --no-cache alpine-sdk build-base bash
+          apk add -U chromium chromium-chromedriver
       - name: bundle install
         run: |
+          ruby -v
           gem install bundler:2.1.4
           bundle install
         working-directory: ${{ github.workspace }}/backend
