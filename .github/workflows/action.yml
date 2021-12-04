@@ -7,11 +7,10 @@ jobs:
   backend:
     name: ruby
     runs-on: ubuntu-latest
+    container:
+      image: ruby:2.6.5
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-ruby@v1
-        with:
-          ruby-version: '2.6' 
       - name: Install chrome
         run: |
           curl -sS -L https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
