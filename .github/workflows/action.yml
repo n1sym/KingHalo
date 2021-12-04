@@ -14,10 +14,10 @@ jobs:
           ruby-version: '2.6' 
       - name: Install chrome
         run: |
-          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
-          echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' | tee /etc/apt/sources.list.d/google-chrome.list
-          apt update -y
-          apt install -y google-chrome-stable
+          curl -sS -L https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
+          echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list
+          apt-get update -q -y
+          apt-get install -y google-chrome-stable
       - name: bundle install
         run: |
           gem install bundler:2.1.4
