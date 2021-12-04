@@ -54,13 +54,10 @@ def main
   horse_url_list.each do |url|
     sleep 1
     page = agent.get(url)
-    elements = page.xpath('//table[@class="blood_table"]')
-    bloods = elements.text.split(/\n| /)
-    bloods.delete("")
-    if bloods.include? "キングヘイロー"
+    b_ml_2 = page.xpath('//td[@class="b_ml"]')[2].css("a").text
+    if b_ml_2 == "キングヘイロー"
       puts "hello!"
       b_ml = page.xpath('//td[@class="b_ml"]')[0].css("a").text
-      b_ml_2 = page.xpath('//td[@class="b_ml"]')[2].css("a").text
       b_fml = page.xpath('//td[@class="b_fml"]')[1].css("a").text
       name = page.xpath('//div[@class="horse_title"]').css('h1').text.strip.gsub(/[[:space:]]/, '')
       age = page.xpath('//div[@class="horse_title"]').css('p').text.split("　")[1]

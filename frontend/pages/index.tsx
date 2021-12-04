@@ -20,14 +20,14 @@ const Home: NextPage = () => {
     <Container maxW='container.lg'>
       <Head>
         <title>King Halos</title>
-        <meta name="description" content="中央競馬に出走する、父キングヘイロー、母父キングヘイローの競走馬を一覧にしたページです" />
+        <meta name="description" content="中央競馬に出走する母父キングヘイローの競走馬を一覧にしたページです" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
         <Box pt="4">
           <Heading>King Halos</Heading>
-          <Text pt="4">中央競馬に出走する、父キングヘイロー、母父キングヘイローの競走馬を一覧にしたページです。21時更新。</Text>
+          <Text pt="4">中央競馬に出走する母父キングヘイローの競走馬を一覧にしたページです。21時更新。</Text>
         </Box>
 
         <Box pt="8">

@@ -47,17 +47,6 @@
                 "race_id": 202109060102
             },
             {
-                "horse_name": "クリノサンレオ",
-                "horse_url": "https://db.netkeiba.com/horse/2013100975",
-                "horse_age": "牡8歳",
-                "horse_color": "栗毛",
-                "b_ml": "キングヘイロー",
-                "b_ml_2": "ディアブロ",
-                "b_fml": "クリノビリオネア",
-                "race_name": "妙見山S",
-                "race_id": 202109060110
-            },
-            {
                 "horse_name": "ペイシャブライティ",
                 "horse_url": "https://db.netkeiba.com/horse/2019101096",
                 "horse_age": "牡2歳",
@@ -94,17 +83,6 @@
                 "b_fml": "スルターナ",
                 "race_name": "2歳新馬",
                 "race_id": 202106050205
-            },
-            {
-                "horse_name": "コスモカルナック",
-                "horse_url": "https://db.netkeiba.com/horse/2017101693",
-                "horse_age": "牡4歳",
-                "horse_color": "鹿毛",
-                "b_ml": "キングヘイロー",
-                "b_ml_2": "メジロマックイーン",
-                "b_fml": "ロゼッタ",
-                "race_name": "南総S",
-                "race_id": 202106050209
             },
             {
                 "horse_name": "キタサンヴィクター",
