@@ -16,6 +16,9 @@ jobs:
       - name: run ruby
         run: ruby hello.rb
         working-directory: ${{ github.workspace }}/backend
+      - name: copy file
+        run: cp test.json ../frontend/my-app/utils
+        working-directory: ${{ github.workspace }}/backend
       - name: git setting
         run: |
           git config user.name github-actions
@@ -55,4 +58,5 @@ jobs:
         with:
           github_token: ${{ secrets.MY_GITHUB_TOKEN }}
           publish_dir: ./out
+        working-directory: ${{ github.workspace }}/frontend/my-app
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
