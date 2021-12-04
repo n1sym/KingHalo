@@ -15,7 +15,7 @@ jobs:
       - name: Install chrome
         run: |
           sudo apt update
-          sudo apt install chromium chromium-chromedriver
+          sudo apt install chromium-chromedriver
         working-directory: ${{ github.workspace }}/backend
       - name: bundle install
         run: bundle install
