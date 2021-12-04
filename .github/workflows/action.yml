@@ -57,6 +57,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3.6.4
         with:
           github_token: ${{ secrets.MY_GITHUB_TOKEN }}
-          publish_dir: ./out
-        working-directory: ${{ github.workspace }}/frontend/my-app
+          publish_dir: ./frontend/my-app/out
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
