@@ -1,51 +1,121 @@
 [
     {
-        "date": "2021-12-05",
-        "list": [
-            {
-                "horse_name": "ユーライクイット",
-                "horse_url": "https://db.netkeiba.com/horse/2019100533"
-            },
-            {
-                "horse_name": "キタサンドーシン",
-                "horse_url": "https://db.netkeiba.com/horse/2019100997"
-            },
-            {
-                "horse_name": "コスモカルナック",
-                "horse_url": "https://db.netkeiba.com/horse/2017101693"
-            },
-            {
-                "horse_name": "キタサンヴィクター",
-                "horse_url": "https://db.netkeiba.com/horse/2015103197"
-            }
-        ]
-    },
-    {
         "date": "2021-12-04",
         "list": [
             {
                 "horse_name": "マハロマヤ",
-                "horse_url": "https://db.netkeiba.com/horse/2019100085"
+                "horse_url": "https://db.netkeiba.com/horse/2019100085",
+                "horse_age": "牝2歳",
+                "horse_color": "青鹿毛",
+                "b_ml": "シルバーステート",
+                "b_ml_2": "キングヘイロー",
+                "b_fml": "ビーナストリック",
+                "race_name": "2歳新馬",
+                "race_id": 202106050105
             },
             {
                 "horse_name": "サクセスシュート",
-                "horse_url": "https://db.netkeiba.com/horse/2019102609"
+                "horse_url": "https://db.netkeiba.com/horse/2019102609",
+                "horse_age": "牡2歳",
+                "horse_color": "鹿毛",
+                "b_ml": "ドゥラメンテ",
+                "b_ml_2": "キングヘイロー",
+                "b_fml": "シニョリーナ",
+                "race_name": "2歳新馬",
+                "race_id": 202106050106
             },
             {
                 "horse_name": "ティグル",
-                "horse_url": "https://db.netkeiba.com/horse/2019103289"
+                "horse_url": "https://db.netkeiba.com/horse/2019103289",
+                "horse_age": "牡2歳",
+                "horse_color": "鹿毛",
+                "b_ml": "ドゥラメンテ",
+                "b_ml_2": "キングヘイロー",
+                "b_fml": "カワカミプリンセス",
+                "race_name": "2歳未勝利",
+                "race_id": 202109060102
             },
             {
                 "horse_name": "ゲオルギウス",
-                "horse_url": "https://db.netkeiba.com/horse/2019102642"
+                "horse_url": "https://db.netkeiba.com/horse/2019102642",
+                "horse_age": "牡2歳",
+                "horse_color": "鹿毛",
+                "b_ml": "トゥザグローリー",
+                "b_ml_2": "キングヘイロー",
+                "b_fml": "スズカルビー",
+                "race_name": "2歳未勝利",
+                "race_id": 202109060102
             },
             {
                 "horse_name": "クリノサンレオ",
-                "horse_url": "https://db.netkeiba.com/horse/2013100975"
+                "horse_url": "https://db.netkeiba.com/horse/2013100975",
+                "horse_age": "牡8歳",
+                "horse_color": "栗毛",
+                "b_ml": "キングヘイロー",
+                "b_ml_2": "ディアブロ",
+                "b_fml": "クリノビリオネア",
+                "race_name": "妙見山S",
+                "race_id": 202109060110
             },
             {
                 "horse_name": "ペイシャブライティ",
-                "horse_url": "https://db.netkeiba.com/horse/2019101096"
+                "horse_url": "https://db.netkeiba.com/horse/2019101096",
+                "horse_age": "牡2歳",
+                "horse_color": "栗毛",
+                "b_ml": "アドマイヤムーン",
+                "b_ml_2": "キングヘイロー",
+                "b_fml": "ブライティアピア",
+                "race_name": "2歳未勝利",
+                "race_id": 202107060101
+            }
+        ]
+    },
+    {
+        "date": "2021-12-05",
+        "list": [
+            {
+                "horse_name": "ユーライクイット",
+                "horse_url": "https://db.netkeiba.com/horse/2019100533",
+                "horse_age": "牡2歳",
+                "horse_color": "鹿毛",
+                "b_ml": "アジアエクスプレス",
+                "b_ml_2": "キングヘイロー",
+                "b_fml": "チュロ",
+                "race_name": "2歳新馬",
+                "race_id": 202106050204
+            },
+            {
+                "horse_name": "キタサンドーシン",
+                "horse_url": "https://db.netkeiba.com/horse/2019100997",
+                "horse_age": "牡2歳",
+                "horse_color": "青鹿毛",
+                "b_ml": "キタサンブラック",
+                "b_ml_2": "キングヘイロー",
+                "b_fml": "スルターナ",
+                "race_name": "2歳新馬",
+                "race_id": 202106050205
+            },
+            {
+                "horse_name": "コスモカルナック",
+                "horse_url": "https://db.netkeiba.com/horse/2017101693",
+                "horse_age": "牡4歳",
+                "horse_color": "鹿毛",
+                "b_ml": "キングヘイロー",
+                "b_ml_2": "メジロマックイーン",
+                "b_fml": "ロゼッタ",
+                "race_name": "南総S",
+                "race_id": 202106050209
+            },
+            {
+                "horse_name": "キタサンヴィクター",
+                "horse_url": "https://db.netkeiba.com/horse/2015103197",
+                "horse_age": "牡6歳",
+                "horse_color": "鹿毛",
+                "b_ml": "キンシャサノキセキ",
+                "b_ml_2": "キングヘイロー",
+                "b_fml": "アドマイヤチャーム",
+                "race_name": "3歳以上2勝クラス",
+                "race_id": 202109060208
             }
         ]
     }
