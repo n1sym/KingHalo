@@ -1,7 +1,17 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { Container, Box, Heading } from '@chakra-ui/react'
-import data from '../utils/test.json'
+import { Container, Box, Heading, Link } from '@chakra-ui/react'
+import data from '../utils/halo.json'
+
+type Halo = {
+  date: string,
+  list: Horse
+}
+
+type Horse = {
+  horse_name: string,
+  horse_url: string
+}
 
 const Home: NextPage = () => {
   return (
@@ -14,15 +24,25 @@ const Home: NextPage = () => {
 
       <main>
         <Box py="4">
-          <Heading>BMS King Halo</Heading>
+          <Heading>今週の母父キングヘイロー</Heading>
         </Box>
 
         <Box py="4">
-          {data.map((d: {name: string; age: number}, index: number)=>{
+          {data.map((halo: any, index: number) => {
             return (
-              <div key={index}>
-                name: {d.name} age: {d.age}
-              </div>
+              <Box key={index} pb="4">
+                <Heading size="md" pb="2">{halo.date}</Heading>
+                {halo.list.map((horse: any, index2: number) => {
+                  return (
+                    <div key={index2}>
+                      <Link color='teal.500' href={horse.horse_url} target="_blank" rel="noopener">
+                        {horse.horse_name}
+                      </Link>
+                      
+                    </div>
+                  )
+                })}
+              </Box>
             )
           })}
         </Box>
