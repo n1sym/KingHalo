@@ -17,7 +17,7 @@ def main
   caps = [
     selenium_options
   ]
-  driver = Selenium::WebDriver.for(:chrome, capabilities: caps)
+  driver = Selenium::WebDriver.for(:remote, desired_capabilities: :chrome, capabilities: caps)
   driver.manage.timeouts.implicit_wait = 30
   driver.navigate.to "https://race.netkeiba.com/top/race_list.html"
   puts driver.title
