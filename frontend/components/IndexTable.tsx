@@ -2,7 +2,7 @@ import { Table, Thead, Tbody, Tr, Th, Td, Box, Text, Link } from "@chakra-ui/rea
 
 export const IndexTable = (props: { result: any[] }) => (
   <>
-  <Box overflowX={{base:"auto", sm:"auto", md: "auto"}} pt={2} pb={12}>
+  <Box overflowX={{base:"auto", sm:"auto", md: "auto"}} pt={2} pb={4}>
   <Table size="sm" mt={4}>
     <Thead>
       <Tr>
