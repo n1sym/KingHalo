@@ -60,7 +60,6 @@ def main
       }
       puts hash
       halo_list << hash
-      break
     end
   end
   halo_list
