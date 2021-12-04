@@ -25,7 +25,7 @@ def main
   driver = Selenium::WebDriver.for(:remote, capabilities: caps, url: "http://#{"localhost"}:4444/wd/hub")
   driver.manage.timeouts.implicit_wait = 30
   driver.navigate.to "https://race.netkeiba.com/top/race_list.html"
-  return puts driver.title
+  puts driver.title
   elements = driver.find_elements(:xpath, '//dl[@class="RaceList_DataList"]/dd/ul/li/a')
   race_url_list = []
   elements.each do |e|
