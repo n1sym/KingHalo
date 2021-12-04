@@ -25,7 +25,9 @@ jobs:
           bundle install
         working-directory: ${{ github.workspace }}/backend
       - name: run ruby
-        run: ruby scrape.rb
+        run: |
+          docker ps
+          ruby scrape.rb
         working-directory: ${{ github.workspace }}/backend
       - name: copy file
         run: cp halo.json ../frontend/my-app/utils
