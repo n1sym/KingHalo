@@ -2,8 +2,7 @@ name: GitHub Actions
 on: 
   push:
   schedule:
-    - cron: '0 0 * * *' # Once per day at midnight
-
+    - cron: '0 0 * * 0,6' # 土曜日,日曜日の午前0時に起動
 jobs:
   backend:
     name: ruby
@@ -13,11 +12,19 @@ jobs:
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: '2.6' 
+      - name: Install chrome
+        run: |
+          sudo apt update
+          sudo apt install chromium chromium-chromedriver
+        working-directory: ${{ github.workspace }}/backend
+      - name: bundle install
+        run: bundle install
+        working-directory: ${{ github.workspace }}/backend
       - name: run ruby
-        run: ruby hello.rb
+        run: ruby scrape.rb
         working-directory: ${{ github.workspace }}/backend
       - name: copy file
-        run: cp test.json ../frontend/my-app/utils
+        run: cp halo.json ../frontend/my-app/utils
         working-directory: ${{ github.workspace }}/backend
       - name: git setting
         run: |
