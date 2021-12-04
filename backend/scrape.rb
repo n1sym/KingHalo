@@ -20,6 +20,7 @@ def main
   driver = Selenium::WebDriver.for(:chrome, capabilities: caps)
   driver.manage.timeouts.implicit_wait = 30
   driver.navigate.to "https://race.netkeiba.com/top/race_list.html"
+  puts driver.title
   elements = driver.find_elements(:xpath, '//dl[@class="RaceList_DataList"]/dd/ul/li/a')
   race_url_list = []
   elements.each do |e|

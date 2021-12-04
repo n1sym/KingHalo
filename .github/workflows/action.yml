@@ -13,11 +13,10 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install
         run: |
-          apk add --no-cache alpine-sdk build-base
+          apk add --no-cache alpine-sdk build-base bash
           apk add -U chromium chromium-chromedriver
           gem install bundler:2.0.2
           bundle install
-        working-directory: ${{ github.workspace }}/backend
       - name: run ruby
         run: ruby scrape.rb
         working-directory: ${{ github.workspace }}/backend
