@@ -6,6 +6,8 @@ import resultData from '../utils/result.json'
 import {IndexTable} from "../components/IndexTable"
 import {ResultTable} from "../components/ResultTable"
 import Footer from "../components/Footer"
+import {ToggleColor} from "../components/ToggleColor"
+import {Nav} from "../components/Nav"
 
 type Halo = {
   date: string,
@@ -25,18 +27,17 @@ const Home: NextPage = () => {
         <meta name="description" content="中央競馬に出走する母父キングヘイローの競走馬を一覧にしたページです" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main>
-        <Box pt="8">
-          <Heading>今週の母父キングヘイロー</Heading>
+        <Nav/>
+        <Box>
           <Text pt="6" pb="2">中央競馬に出走する母父キングヘイローの競走馬を一覧にしたページです。金曜21時更新。</Text>
         </Box>
 
         <Box pt="4">
-          {data.reverse().map((halo: any, index: number) => {
+          {data.map((halo: any, index: number) => {
             return (
               <Box key={index} py="4">
-                <Heading size="md">{halo.date}</Heading>
+                <Heading size="md">{halo.date} ({dayOfweekStr(halo.date)})</Heading>
                 <IndexTable result={halo.list}></IndexTable>
               </Box>
             )
@@ -44,7 +45,7 @@ const Home: NextPage = () => {
         </Box>
 
         <Box pt="4">
-          <Heading size="md">直近20レースの競走成績</Heading>
+          <Heading size="md">直近100レースの競走成績</Heading>
           <ResultTable result={resultData}></ResultTable>
         </Box>
       </main>
@@ -54,3 +55,8 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+const dayOfweekStr = (dateStr: string) => {
+  const date = new Date(dateStr)
+  return [ "日", "月", "火", "水", "木", "金", "土" ][date.getDay()]
+}

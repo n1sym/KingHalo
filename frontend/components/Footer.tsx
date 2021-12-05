@@ -2,7 +2,7 @@ import { Center, Stack, Text, Link } from '@chakra-ui/react'
 
 export default function Footer() {
   return (
-    <Center color="black">
+    <Center>
       <Stack pb={8} pt={4}>
         <Center>
           <Text mr={1} mt={2}>contact: </Text>

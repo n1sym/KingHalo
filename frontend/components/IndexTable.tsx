@@ -99,5 +99,5 @@ const kaisai = (raceId: number) => {
     "10": "小倉"
   } as KaisaiId
   const rId = Number(String(raceId).substring(10, 12))
-  return <Text color="gray.800"> {hash[kaisaiId]} {rId}R </Text>
+  return <Text> {hash[kaisaiId]} {rId}R </Text>
 }
