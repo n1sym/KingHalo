@@ -47,7 +47,7 @@ const displayThColor = (index: number, item: any) => {
   );
 };
 
-const colorNum = (num: any) => {
+function colorNum(num: any) {
   const first = useColorModeValue('yellow.100', '#f0e68c')
   const second = useColorModeValue('blue.100', '#87ceeb')
   const third = useColorModeValue('orange.100', '#d2b48c')
@@ -70,7 +70,7 @@ const colorNum = (num: any) => {
   }
 }
 
-const colorRaceName = (raceName: string) => {
+function colorRaceName(raceName: string) {
     const first = useColorModeValue('yellow.100', '#f0e68c')
     const second = useColorModeValue('blue.100', '#87ceeb')
     const third = useColorModeValue('orange.100', '#d2b48c')
