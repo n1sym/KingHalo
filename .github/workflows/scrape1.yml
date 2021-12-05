@@ -2,7 +2,7 @@ name: Scrape 1
 on: 
   workflow_dispatch:
   schedule:
-    - cron: '0 12 * * 5,6' # 金,土曜日の21時に起動
+    - cron: '0 12 * * 5' # 金曜日の21時に起動
 jobs:
   backend:
     name: ruby

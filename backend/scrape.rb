@@ -16,7 +16,7 @@ def selenium_capabilities_chrome
   Selenium::WebDriver::Remote::Capabilities.chrome
 end
 
-def main
+def main(date)
   puts "start scrape"
   caps = [
     selenium_options,
@@ -24,7 +24,7 @@ def main
   ]
   driver = Selenium::WebDriver.for(:remote, capabilities: caps, url: "http://localhost:4444/wd/hub")
   driver.manage.timeouts.implicit_wait = 30
-  driver.navigate.to "https://race.netkeiba.com/top/race_list.html"
+  driver.navigate.to "https://race.netkeiba.com/top/race_list.html?kaisai_date=#{date}"
   puts driver.title
   elements = driver.find_elements(:xpath, '//dl[@class="RaceList_DataList"]/dd/ul/li/a')
   race_url_list = []
@@ -79,15 +79,13 @@ def main
 end
 
 arr = []
-if File.exist?("halo.json")
-  File.open("halo.json") do |j|
-    arr = JSON.load(j)
-  end
-end
-
 date = Date.today + 1
-halo_list = main()
+halo_list = main(date.to_s.gsub("-",""))
 arr << {date: date, list: halo_list}
+
+date += 1
+halo_list2 = main(date.to_s.gsub("-",""))
+arr << {date: date, list: halo_list2}
 
 File.open("halo.json","w") {|file| 
   file.puts(JSON.generate(arr))
