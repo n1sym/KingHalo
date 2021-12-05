@@ -25,9 +25,9 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <Box pt="4">
-          <Heading>King Halos</Heading>
-          <Text pt="6" pb="2">中央競馬に出走する母父キングヘイローの競走馬を一覧にしたページです。21時更新。</Text>
+        <Box pt="8">
+          <Heading>今週の母父キングヘイロー</Heading>
+          <Text pt="6" pb="2">中央競馬に出走する母父キングヘイローの競走馬を一覧にしたページです。金曜21時更新。</Text>
         </Box>
 
         <Box pt="4">
