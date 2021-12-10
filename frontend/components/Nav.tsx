@@ -39,7 +39,7 @@ export function Nav() {
     <>
       <Box>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Heading size="lg">今週の母父キングヘイロー</Heading>
+          <Heading size="md">今週の母父キングヘイロー</Heading>
 
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>
