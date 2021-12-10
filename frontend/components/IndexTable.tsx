@@ -35,7 +35,7 @@ const displayThColor = (index: number, item: any) => {
       </Td>
       <Td minW={20}>{colorNum(item.horse_age)}</Td>
       <Td minW={20}>{horseColor(item.horse_color)}</Td>
-      <Td minW={20}>{kaisai(item.race_id)}</Td>
+      <Td minW={24}>{kaisai(item.race_id)}</Td>
       <Td minW={40}>
       <Link color='teal.500' href={"https://race.netkeiba.com/race/shutuba.html?race_id="+item.race_id+"&rf=race_list"} target="_blank" rel="noopener">
           {item.race_name}
