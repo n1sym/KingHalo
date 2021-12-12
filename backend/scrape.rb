@@ -83,7 +83,7 @@ arr = []
 date = Date.today + 1
 halo_list = main(date.to_s.gsub("-",""))
 arr << {date: date, list: halo_list}
-return
+
 date += 1
 halo_list2 = main(date.to_s.gsub("-",""))
 arr << {date: date, list: halo_list2}

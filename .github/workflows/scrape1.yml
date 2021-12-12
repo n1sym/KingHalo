@@ -29,9 +29,9 @@ jobs:
       - name: run ruby
         run: ruby scrape.rb
         working-directory: ${{ github.workspace }}/backend
-      #- name: copy file
-      #  run: cp halo.json ../frontend/utils
-      #  working-directory: ${{ github.workspace }}/backend
+      - name: copy file
+        run: cp halo.json ../frontend/utils
+        working-directory: ${{ github.workspace }}/backend
       - name: git setting
         run: |
           git config user.name github-actions
