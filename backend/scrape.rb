@@ -22,10 +22,11 @@ def main(date)
     selenium_options,
     selenium_capabilities_chrome
   ]
-  driver = Selenium::WebDriver.for(:remote, capabilities: caps, url: "http://localhost:4444/wd/hub")
+  driver = Selenium::WebDriver.for(:remote, capabilities: caps, url: "http://#{ENV.fetch("SELENIUM_HOST")}/wd/hub")
   driver.manage.timeouts.implicit_wait = 30
   driver.navigate.to "https://race.netkeiba.com/top/race_list.html?kaisai_date=#{date}"
   puts driver.title
+
   elements = driver.find_elements(:xpath, '//dl[@class="RaceList_DataList"]/dd/ul/li/a')
   race_url_list = []
   elements.each do |e|
@@ -82,7 +83,7 @@ arr = []
 date = Date.today + 1
 halo_list = main(date.to_s.gsub("-",""))
 arr << {date: date, list: halo_list}
-
+return
 date += 1
 halo_list2 = main(date.to_s.gsub("-",""))
 arr << {date: date, list: halo_list2}

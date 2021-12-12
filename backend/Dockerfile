@@ -1,12 +1,9 @@
-FROM ruby:2.7.1-alpine
+FROM ruby:2.6-alpine
 WORKDIR /myapp
 COPY . /myapp
-RUN apk add --no-cache -t .build-dependencies \
-    alpine-sdk \
-    build-base \
- && apk add bash \
- && gem install bundler:2.0.2 \
- && bundle install \
- && apk del --purge .build-dependencies
 
+RUN apk add --no-cache alpine-sdk build-base bash\
+  && gem install bundler:2.0.2 \
+  && bundle install
+  
 CMD /bin/sh -c "while sleep 1000; do :; done"

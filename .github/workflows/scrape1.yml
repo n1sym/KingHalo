@@ -14,6 +14,8 @@ jobs:
           - 4444:4444
         volumes:
           - /dev/shm:/dev/shm
+    env:
+      SELENIUM_HOST: "localhost:4444"
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-ruby@v1
@@ -25,13 +27,11 @@ jobs:
           bundle install
         working-directory: ${{ github.workspace }}/backend
       - name: run ruby
-        run: |
-          docker ps
-          ruby scrape.rb
+        run: ruby scrape.rb
         working-directory: ${{ github.workspace }}/backend
-      - name: copy file
-        run: cp halo.json ../frontend/utils
-        working-directory: ${{ github.workspace }}/backend
+      #- name: copy file
+      #  run: cp halo.json ../frontend/utils
+      #  working-directory: ${{ github.workspace }}/backend
       - name: git setting
         run: |
           git config user.name github-actions

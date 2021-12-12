@@ -2,11 +2,14 @@ version: "3.9"
 services:
   chrome:
     image: selenium/standalone-chrome:3.141.59-vanadium
+    hostname: selenium-server
     ports:
       - 4444:4444
     volumes:
       - /dev/shm:/dev/shm
   ruby:
     build: .
+    environment:
+      SELENIUM_HOST: "selenium-server:4444"
     volumes:
       - .:/myapp
